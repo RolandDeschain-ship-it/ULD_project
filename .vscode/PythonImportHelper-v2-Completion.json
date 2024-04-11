@@ -1,0 +1,338 @@
+[
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "optim",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "utils",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "Tensor",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "ImageFolder",
+        "importPath": "torchvision.datasets",
+        "description": "torchvision.datasets",
+        "isExtraImport": true,
+        "detail": "torchvision.datasets",
+        "documentation": {}
+    },
+    {
+        "label": "transforms",
+        "importPath": "torchvision.transforms",
+        "description": "torchvision.transforms",
+        "isExtraImport": true,
+        "detail": "torchvision.transforms",
+        "documentation": {}
+    },
+    {
+        "label": "lightning",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "lightning",
+        "description": "lightning",
+        "detail": "lightning",
+        "documentation": {}
+    },
+    {
+        "label": "add",
+        "kind": 2,
+        "importPath": "src.tests.test_example",
+        "description": "src.tests.test_example",
+        "peekOfCode": "def add(a: int, b: int) -> int:\n    return a + b\ndef test_adding() -> None:\n    assert add(2, 2) == 4\n    with pytest.raises(AssertionError):\n        assert add(2, 3) == 4",
+        "detail": "src.tests.test_example",
+        "documentation": {}
+    },
+    {
+        "label": "test_adding",
+        "kind": 2,
+        "importPath": "src.tests.test_example",
+        "description": "src.tests.test_example",
+        "peekOfCode": "def test_adding() -> None:\n    assert add(2, 2) == 4\n    with pytest.raises(AssertionError):\n        assert add(2, 3) == 4",
+        "detail": "src.tests.test_example",
+        "documentation": {}
+    },
+    {
+        "label": "is_empty_annotation",
+        "kind": 2,
+        "importPath": "src.dataClean",
+        "description": "src.dataClean",
+        "peekOfCode": "def is_empty_annotation(annotation_file):\n    return os.path.getsize(annotation_file) == 0\n# Function to remove image and annotation file pair\ndef remove_empty_annotations(dataset_folder):\n    deleted_files = 0\n    remaining_images = 0\n    deleted_images = []\n    # Iterate over train and val directories in images folder\n    for dataset_type in ['train', 'val']:\n        images_dir = os.path.join(dataset_folder, 'images', dataset_type)",
+        "detail": "src.dataClean",
+        "documentation": {}
+    },
+    {
+        "label": "remove_empty_annotations",
+        "kind": 2,
+        "importPath": "src.dataClean",
+        "description": "src.dataClean",
+        "peekOfCode": "def remove_empty_annotations(dataset_folder):\n    deleted_files = 0\n    remaining_images = 0\n    deleted_images = []\n    # Iterate over train and val directories in images folder\n    for dataset_type in ['train', 'val']:\n        images_dir = os.path.join(dataset_folder, 'images', dataset_type)\n        annotations_dir = os.path.join(dataset_folder, 'annotations', dataset_type)\n        for root, _, files in os.walk(images_dir):\n            for file in files:",
+        "detail": "src.dataClean",
+        "documentation": {}
+    },
+    {
+        "label": "dataset_folder",
+        "kind": 5,
+        "importPath": "src.dataClean",
+        "description": "src.dataClean",
+        "peekOfCode": "dataset_folder = '/home/benedikt/projects/ULD_project/data/external/datasetExtAlu2'\nremove_empty_annotations(dataset_folder)",
+        "detail": "src.dataClean",
+        "documentation": {}
+    },
+    {
+        "label": "copy_data",
+        "kind": 2,
+        "importPath": "src.dataMerge",
+        "description": "src.dataMerge",
+        "peekOfCode": "def copy_data(source_folder, destination_folder):\n    # Ensure destination directories exist\n    os.makedirs(destination_folder, exist_ok=True)\n    # List all files in the source folder\n    files = os.listdir(source_folder)\n    # Copy files to corresponding combined folder\n    for file in files:\n        source_path = os.path.join(source_folder, file)\n        destination_path = os.path.join(destination_folder, file)\n        shutil.copy(source_path, destination_path)",
+        "detail": "src.dataMerge",
+        "documentation": {}
+    },
+    {
+        "label": "dataset_paths",
+        "kind": 5,
+        "importPath": "src.dataMerge",
+        "description": "src.dataMerge",
+        "peekOfCode": "dataset_paths = [\n    '/home/benedikt/projects/ULD_project/data/external_1/merged_ext_1',\n    '/home/benedikt/projects/ULD_project/data/real_1/merged_real_1'\n]\n# Combined output folder\ncombined_output_folder = '/home/benedikt/projects/ULD_project/data/combined/combined_1'\n# Function to copy images and annotations from each dataset\n# Function to copy images and annotations from each dataset\ndef copy_data(source_folder, destination_folder):\n    # Ensure destination directories exist",
+        "detail": "src.dataMerge",
+        "documentation": {}
+    },
+    {
+        "label": "combined_output_folder",
+        "kind": 5,
+        "importPath": "src.dataMerge",
+        "description": "src.dataMerge",
+        "peekOfCode": "combined_output_folder = '/home/benedikt/projects/ULD_project/data/combined/combined_1'\n# Function to copy images and annotations from each dataset\n# Function to copy images and annotations from each dataset\ndef copy_data(source_folder, destination_folder):\n    # Ensure destination directories exist\n    os.makedirs(destination_folder, exist_ok=True)\n    # List all files in the source folder\n    files = os.listdir(source_folder)\n    # Copy files to corresponding combined folder\n    for file in files:",
+        "detail": "src.dataMerge",
+        "documentation": {}
+    },
+    {
+        "label": "train_image_count",
+        "kind": 5,
+        "importPath": "src.dataMerge",
+        "description": "src.dataMerge",
+        "peekOfCode": "train_image_count = 0\nval_image_count = 0\ntrain_annotation_count = 0\nval_annotation_count = 0\n# Iterate over each dataset\nfor dataset_path in dataset_paths:\n    # Copy train images and annotations\n    copy_data(os.path.join(dataset_path, 'images', 'train'), os.path.join(combined_output_folder, 'images', 'train'))\n    copy_data(os.path.join(dataset_path, 'annotations', 'train'), os.path.join(combined_output_folder, 'annotations', 'train'))\n    # Copy validation images and annotations",
+        "detail": "src.dataMerge",
+        "documentation": {}
+    },
+    {
+        "label": "val_image_count",
+        "kind": 5,
+        "importPath": "src.dataMerge",
+        "description": "src.dataMerge",
+        "peekOfCode": "val_image_count = 0\ntrain_annotation_count = 0\nval_annotation_count = 0\n# Iterate over each dataset\nfor dataset_path in dataset_paths:\n    # Copy train images and annotations\n    copy_data(os.path.join(dataset_path, 'images', 'train'), os.path.join(combined_output_folder, 'images', 'train'))\n    copy_data(os.path.join(dataset_path, 'annotations', 'train'), os.path.join(combined_output_folder, 'annotations', 'train'))\n    # Copy validation images and annotations\n    copy_data(os.path.join(dataset_path, 'images', 'val'), os.path.join(combined_output_folder, 'images', 'val'))",
+        "detail": "src.dataMerge",
+        "documentation": {}
+    },
+    {
+        "label": "train_annotation_count",
+        "kind": 5,
+        "importPath": "src.dataMerge",
+        "description": "src.dataMerge",
+        "peekOfCode": "train_annotation_count = 0\nval_annotation_count = 0\n# Iterate over each dataset\nfor dataset_path in dataset_paths:\n    # Copy train images and annotations\n    copy_data(os.path.join(dataset_path, 'images', 'train'), os.path.join(combined_output_folder, 'images', 'train'))\n    copy_data(os.path.join(dataset_path, 'annotations', 'train'), os.path.join(combined_output_folder, 'annotations', 'train'))\n    # Copy validation images and annotations\n    copy_data(os.path.join(dataset_path, 'images', 'val'), os.path.join(combined_output_folder, 'images', 'val'))\n    copy_data(os.path.join(dataset_path, 'annotations', 'val'), os.path.join(combined_output_folder, 'annotations', 'val'))",
+        "detail": "src.dataMerge",
+        "documentation": {}
+    },
+    {
+        "label": "val_annotation_count",
+        "kind": 5,
+        "importPath": "src.dataMerge",
+        "description": "src.dataMerge",
+        "peekOfCode": "val_annotation_count = 0\n# Iterate over each dataset\nfor dataset_path in dataset_paths:\n    # Copy train images and annotations\n    copy_data(os.path.join(dataset_path, 'images', 'train'), os.path.join(combined_output_folder, 'images', 'train'))\n    copy_data(os.path.join(dataset_path, 'annotations', 'train'), os.path.join(combined_output_folder, 'annotations', 'train'))\n    # Copy validation images and annotations\n    copy_data(os.path.join(dataset_path, 'images', 'val'), os.path.join(combined_output_folder, 'images', 'val'))\n    copy_data(os.path.join(dataset_path, 'annotations', 'val'), os.path.join(combined_output_folder, 'annotations', 'val'))\n    # Update counts",
+        "detail": "src.dataMerge",
+        "documentation": {}
+    },
+    {
+        "label": "copy_annotations",
+        "kind": 2,
+        "importPath": "src.dataSplit",
+        "description": "src.dataSplit",
+        "peekOfCode": "def copy_annotations(image_files, source_folder, destination_folder):\n    for file in image_files:\n        filename, _ = os.path.splitext(file)\n        annotation_file = filename + '.txt'\n        source_path = os.path.join(source_folder, annotation_file)\n        destination_path = os.path.join(destination_folder, annotation_file)\n        if os.path.exists(source_path):\n            print(\"Copying\", source_path, \"to\", destination_path)\n            shutil.copy(source_path, destination_path)\n# Copy annotations to corresponding train and validation folders",
+        "detail": "src.dataSplit",
+        "documentation": {}
+    },
+    {
+        "label": "data_folder",
+        "kind": 5,
+        "importPath": "src.dataSplit",
+        "description": "src.dataSplit",
+        "peekOfCode": "data_folder = \"/home/benedikt/Documents/Studium/Bachelor Thesis/datasets/batch4/obj_train_data/all_sorted\"\n# Path to the output folders\noutput_folder = \"/home/benedikt/projects/ULD_project/data/real_1/dataset4\"\n# Percentage of data to be used for validation\nvalidation_split = 0.2\n# Create train and validation folders for images\nos.makedirs(os.path.join(output_folder, 'images', 'train'), exist_ok=True)\nos.makedirs(os.path.join(output_folder, 'images', 'val'), exist_ok=True)\n# Create train and validation folders for annotations\nos.makedirs(os.path.join(output_folder, 'annotations', 'train'), exist_ok=True)",
+        "detail": "src.dataSplit",
+        "documentation": {}
+    },
+    {
+        "label": "output_folder",
+        "kind": 5,
+        "importPath": "src.dataSplit",
+        "description": "src.dataSplit",
+        "peekOfCode": "output_folder = \"/home/benedikt/projects/ULD_project/data/real_1/dataset4\"\n# Percentage of data to be used for validation\nvalidation_split = 0.2\n# Create train and validation folders for images\nos.makedirs(os.path.join(output_folder, 'images', 'train'), exist_ok=True)\nos.makedirs(os.path.join(output_folder, 'images', 'val'), exist_ok=True)\n# Create train and validation folders for annotations\nos.makedirs(os.path.join(output_folder, 'annotations', 'train'), exist_ok=True)\nos.makedirs(os.path.join(output_folder, 'annotations', 'val'), exist_ok=True)\n# List all image files in the data folder",
+        "detail": "src.dataSplit",
+        "documentation": {}
+    },
+    {
+        "label": "validation_split",
+        "kind": 5,
+        "importPath": "src.dataSplit",
+        "description": "src.dataSplit",
+        "peekOfCode": "validation_split = 0.2\n# Create train and validation folders for images\nos.makedirs(os.path.join(output_folder, 'images', 'train'), exist_ok=True)\nos.makedirs(os.path.join(output_folder, 'images', 'val'), exist_ok=True)\n# Create train and validation folders for annotations\nos.makedirs(os.path.join(output_folder, 'annotations', 'train'), exist_ok=True)\nos.makedirs(os.path.join(output_folder, 'annotations', 'val'), exist_ok=True)\n# List all image files in the data folder\nimage_files = [file for file in os.listdir(data_folder) if file.lower().endswith(('.jpg', '.jpeg', '.png'))]\n# Shuffle the list of image files",
+        "detail": "src.dataSplit",
+        "documentation": {}
+    },
+    {
+        "label": "image_files",
+        "kind": 5,
+        "importPath": "src.dataSplit",
+        "description": "src.dataSplit",
+        "peekOfCode": "image_files = [file for file in os.listdir(data_folder) if file.lower().endswith(('.jpg', '.jpeg', '.png'))]\n# Shuffle the list of image files\nrandom.shuffle(image_files)\n# Calculate the split index\nsplit_index = int(len(image_files) * validation_split)\n# Split files into train and validation sets\ntrain_image_files = image_files[split_index:]\nval_image_files = image_files[:split_index]\nprint(\"Number of train images:\", len(train_image_files))\nprint(\"Number of validation images:\", len(val_image_files))",
+        "detail": "src.dataSplit",
+        "documentation": {}
+    },
+    {
+        "label": "split_index",
+        "kind": 5,
+        "importPath": "src.dataSplit",
+        "description": "src.dataSplit",
+        "peekOfCode": "split_index = int(len(image_files) * validation_split)\n# Split files into train and validation sets\ntrain_image_files = image_files[split_index:]\nval_image_files = image_files[:split_index]\nprint(\"Number of train images:\", len(train_image_files))\nprint(\"Number of validation images:\", len(val_image_files))\n# Copy images to corresponding train and validation folders\nfor file in train_image_files:\n    source_path = os.path.join(data_folder, file)\n    destination_path = os.path.join(output_folder, 'images', 'train', file)",
+        "detail": "src.dataSplit",
+        "documentation": {}
+    },
+    {
+        "label": "train_image_files",
+        "kind": 5,
+        "importPath": "src.dataSplit",
+        "description": "src.dataSplit",
+        "peekOfCode": "train_image_files = image_files[split_index:]\nval_image_files = image_files[:split_index]\nprint(\"Number of train images:\", len(train_image_files))\nprint(\"Number of validation images:\", len(val_image_files))\n# Copy images to corresponding train and validation folders\nfor file in train_image_files:\n    source_path = os.path.join(data_folder, file)\n    destination_path = os.path.join(output_folder, 'images', 'train', file)\n    print(\"Copying\", source_path, \"to\", destination_path)\n    shutil.copy(source_path, destination_path)",
+        "detail": "src.dataSplit",
+        "documentation": {}
+    },
+    {
+        "label": "val_image_files",
+        "kind": 5,
+        "importPath": "src.dataSplit",
+        "description": "src.dataSplit",
+        "peekOfCode": "val_image_files = image_files[:split_index]\nprint(\"Number of train images:\", len(train_image_files))\nprint(\"Number of validation images:\", len(val_image_files))\n# Copy images to corresponding train and validation folders\nfor file in train_image_files:\n    source_path = os.path.join(data_folder, file)\n    destination_path = os.path.join(output_folder, 'images', 'train', file)\n    print(\"Copying\", source_path, \"to\", destination_path)\n    shutil.copy(source_path, destination_path)\nfor file in val_image_files:",
+        "detail": "src.dataSplit",
+        "documentation": {}
+    },
+    {
+        "label": "LitAutoEncoder",
+        "kind": 6,
+        "importPath": "src.main",
+        "description": "src.main",
+        "peekOfCode": "class LitAutoEncoder(L.LightningModule):\n    def __init__(self, encoder: nn.Module, decoder: nn.Module):\n        super().__init__()\n        self.encoder = encoder\n        self.decoder = decoder\n    def training_step(self, batch: Tensor, batch_idx: int):\n        # training_step defines the train loop.\n        # it is independent of forward\n        x, y = batch\n        x = x.view(x.size(0), -1)",
+        "detail": "src.main",
+        "documentation": {}
+    },
+    {
+        "label": "encoder",
+        "kind": 5,
+        "importPath": "src.main",
+        "description": "src.main",
+        "peekOfCode": "encoder = nn.Sequential(nn.Linear(28 * 28, 64), nn.ReLU(), nn.Linear(64, 3))\ndecoder = nn.Sequential(nn.Linear(3, 64), nn.ReLU(), nn.Linear(64, 28 * 28))\n# define the LightningModule\nclass LitAutoEncoder(L.LightningModule):\n    def __init__(self, encoder: nn.Module, decoder: nn.Module):\n        super().__init__()\n        self.encoder = encoder\n        self.decoder = decoder\n    def training_step(self, batch: Tensor, batch_idx: int):\n        # training_step defines the train loop.",
+        "detail": "src.main",
+        "documentation": {}
+    },
+    {
+        "label": "decoder",
+        "kind": 5,
+        "importPath": "src.main",
+        "description": "src.main",
+        "peekOfCode": "decoder = nn.Sequential(nn.Linear(3, 64), nn.ReLU(), nn.Linear(64, 28 * 28))\n# define the LightningModule\nclass LitAutoEncoder(L.LightningModule):\n    def __init__(self, encoder: nn.Module, decoder: nn.Module):\n        super().__init__()\n        self.encoder = encoder\n        self.decoder = decoder\n    def training_step(self, batch: Tensor, batch_idx: int):\n        # training_step defines the train loop.\n        # it is independent of forward",
+        "detail": "src.main",
+        "documentation": {}
+    },
+    {
+        "label": "autoencoder",
+        "kind": 5,
+        "importPath": "src.main",
+        "description": "src.main",
+        "peekOfCode": "autoencoder = LitAutoEncoder(encoder, decoder)\n# setup data\n# Replace 'path_to_your_dataset' with the path to your dataset folder\ndataset = ImageFolder(\n    \"/home/benedikt/projects/ULD_project/data/real_1/merged_real_1\",\n    transform=transforms.ToTensor(),\n)\ntrain_loader = utils.data.DataLoader(dataset)\n# train the model (hint: here are some helpful Trainer arguments for rapid idea iteration)\ntrainer = L.Trainer(limit_train_batches=100, max_epochs=10)",
+        "detail": "src.main",
+        "documentation": {}
+    },
+    {
+        "label": "dataset",
+        "kind": 5,
+        "importPath": "src.main",
+        "description": "src.main",
+        "peekOfCode": "dataset = ImageFolder(\n    \"/home/benedikt/projects/ULD_project/data/real_1/merged_real_1\",\n    transform=transforms.ToTensor(),\n)\ntrain_loader = utils.data.DataLoader(dataset)\n# train the model (hint: here are some helpful Trainer arguments for rapid idea iteration)\ntrainer = L.Trainer(limit_train_batches=100, max_epochs=10)\ntrainer.fit(model=autoencoder, train_dataloaders=train_loader)",
+        "detail": "src.main",
+        "documentation": {}
+    },
+    {
+        "label": "train_loader",
+        "kind": 5,
+        "importPath": "src.main",
+        "description": "src.main",
+        "peekOfCode": "train_loader = utils.data.DataLoader(dataset)\n# train the model (hint: here are some helpful Trainer arguments for rapid idea iteration)\ntrainer = L.Trainer(limit_train_batches=100, max_epochs=10)\ntrainer.fit(model=autoencoder, train_dataloaders=train_loader)",
+        "detail": "src.main",
+        "documentation": {}
+    },
+    {
+        "label": "trainer",
+        "kind": 5,
+        "importPath": "src.main",
+        "description": "src.main",
+        "peekOfCode": "trainer = L.Trainer(limit_train_batches=100, max_epochs=10)\ntrainer.fit(model=autoencoder, train_dataloaders=train_loader)",
+        "detail": "src.main",
+        "documentation": {}
+    }
+]

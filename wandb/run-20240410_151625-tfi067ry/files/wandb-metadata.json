@@ -1,0 +1,127 @@
+{
+    "os": "Linux-6.5.0-27-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-04-10T13:16:26.097494",
+    "startedAt": "2024-04-10T13:16:25.646425",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "detect",
+        "train",
+        "data=data/real_1/merged_real_2/data.yaml",
+        "model=yolov8s",
+        "epochs=10",
+        "imgsz=640",
+        "batch=8"
+    ],
+    "state": "running",
+    "program": "/home/benedikt/.local/bin/yolo",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/RolandDeschain-ship-it/ULD_project.git",
+        "commit": "5ae1bf8b03b538e0129c96ef65210133bc579016"
+    },
+    "email": null,
+    "root": "/home/benedikt/projects/ULD_project",
+    "host": "benedikt-ThinkPad-E14-Gen-5",
+    "username": "benedikt",
+    "executable": "/usr/bin/python3.10",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 1335.8662499999998,
+        "min": 400.0,
+        "max": 4546.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1596.306,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1596.843,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1596.314,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1597.24,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1994.692,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1996.186,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1604.41,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1996.416,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1596.085,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1471.541,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1596.995,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1598.197,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 1595.895,
+            "min": 400.0,
+            "max": 4546.0
+        },
+        {
+            "current": 400.0,
+            "min": 400.0,
+            "max": 4546.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 937.3305015563965,
+            "used": 423.87915420532227
+        }
+    },
+    "memory": {
+        "total": 22.347122192382812
+    }
+}
