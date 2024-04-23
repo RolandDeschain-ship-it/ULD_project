@@ -3,10 +3,10 @@ import shutil
 import random
 
 # Path to the folder containing images and annotations
-data_folder = "/home/benedikt/Documents/Studium/Bachelor Thesis/datasets/batch4/obj_train_data/all_sorted"
+data_folder = "/home/benedikt/projects/ULD_project/data/class_test/alu/alu_real_ext (copy)/all"
 
 # Path to the output folders
-output_folder = "/home/benedikt/projects/ULD_project/data/real_1/dataset4"
+output_folder = "/home/benedikt/projects/ULD_project/data/class_test/alu/alu_real_ext"
 
 # Percentage of data to be used for validation
 validation_split = 0.2
@@ -16,8 +16,8 @@ os.makedirs(os.path.join(output_folder, 'images', 'train'), exist_ok=True)
 os.makedirs(os.path.join(output_folder, 'images', 'val'), exist_ok=True)
 
 # Create train and validation folders for annotations
-os.makedirs(os.path.join(output_folder, 'annotations', 'train'), exist_ok=True)
-os.makedirs(os.path.join(output_folder, 'annotations', 'val'), exist_ok=True)
+os.makedirs(os.path.join(output_folder, 'labels', 'train'), exist_ok=True)
+os.makedirs(os.path.join(output_folder, 'labels', 'val'), exist_ok=True)
 
 # List all image files in the data folder
 image_files = [file for file in os.listdir(data_folder) if file.lower().endswith(('.jpg', '.jpeg', '.png'))]
@@ -60,5 +60,5 @@ def copy_annotations(image_files, source_folder, destination_folder):
             shutil.copy(source_path, destination_path)
 
 # Copy annotations to corresponding train and validation folders
-copy_annotations(train_image_files, data_folder, os.path.join(output_folder, 'annotations', 'train'))
-copy_annotations(val_image_files, data_folder, os.path.join(output_folder, 'annotations', 'val'))
+copy_annotations(train_image_files, data_folder, os.path.join(output_folder, 'labes', 'train'))
+copy_annotations(val_image_files, data_folder, os.path.join(output_folder, 'labels', 'val'))
